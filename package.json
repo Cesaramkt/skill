@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "remotion studio",
-    "build": "remotion render MyVideo out/video.mp4",
+    "start": "remotion studio src/index.tsx",
+    "build": "remotion render src/index.tsx SharedSale out/sharedsale.mp4 --codec=h264",
+    "render:4k": "remotion render src/index.tsx SharedSale out/sharedsale-4k.mp4 --codec=h264 --scale=2",
+    "render:test": "remotion render src/index.tsx SharedSale out/test.mp4 --codec=h264 --frames=0-90",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@remotion/cli": "^4.0.460",
+    "@remotion/google-fonts": "^4.0.460",
     "remotion": "^4.0.460"
   },
   "devDependencies": {
